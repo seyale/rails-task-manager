@@ -2,15 +2,15 @@
 
 
 <table>
+  <th>Status</th>
   <th>Task</th>
   <th>Details</th>
-  <th>Status</th>
   <tbody>
   <% @tasks.each do |task| %>
     <tr>
+      <td><%= task.completed %></td>
       <td><%= link_to task.title, task_path(task) %></td>
       <td><%= task.details %></td>
-      <td><%= task.completed %></td>
       <td><%= link_to "edit", edit_task_path(task) %> | <%= link_to "delete", task_path(task), method: :delete %></td>
     </tr>
   <% end %>
